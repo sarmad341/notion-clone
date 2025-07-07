@@ -107,7 +107,7 @@ function Sidebar() {
             Shared with me
           </h2>
           {groupedData.editor.map((doc) => (
-            <SidebarOption key={doc.id} id={doc.id} href={`/doc${doc.id}`} />
+            <SidebarOption key={doc.id} id={doc.id} href={`/doc/${doc.id}`} />
           ))}
         </>
       )}

@@ -8,8 +8,8 @@ export async function createNewDocument() {
   auth.protect();
 
   const { sessionClaims } = await auth();
-  console.log("sessionClaims:", sessionClaims);
 
+  const docCollectionRef = adminDb.collection("documents");
   const docRef = await adminDb.collection("documents").add({
     title: "New Doc",
   });
@@ -43,7 +43,7 @@ export async function deleteDocument(roomId: string) {
       .get();
 
     const batch = adminDb.batch();
-    query.forEach((doc) => {
+    query.docs.forEach((doc) => {
       batch.delete(doc.ref);
     });
 

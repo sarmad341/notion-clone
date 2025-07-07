@@ -20,7 +20,7 @@ function DeleteDocument() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
-  const Router = useRouter();
+  const router = useRouter();
 
   const handleDelete = async () => {
     const roomId = pathname.split("/").pop();
@@ -31,7 +31,7 @@ function DeleteDocument() {
 
       if (success) {
         setIsOpen(false);
-        Router.replace("/");
+        router.replace("/");
         toast.success("Room deleted successfully!");
       } else {
         toast.error("Failed to delete room!");
