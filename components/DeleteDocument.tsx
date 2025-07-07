@@ -32,9 +32,9 @@ function DeleteDocument() {
       if (success) {
         setIsOpen(false);
         Router.replace("/");
-        toast.success("Room deleted successfully");
+        toast.success("Room deleted successfully!");
       } else {
-        toast.error("Failed to delete room");
+        toast.error("Failed to delete room!");
       }
     });
   };
